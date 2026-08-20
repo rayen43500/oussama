@@ -1,0 +1,95 @@
+/* assets/css/responsive.css */
+
+/* Large viewports (1440px +) */
+@media (min-width: 1440px) {
+    .main-content {
+        max-width: 1400px;
+        margin-right: auto;
+    }
+}
+
+/* Tablets and small desktops (1024px and under) */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Phablets and tablets (768px and under) */
+@media (max-width: 768px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .main-header .user-profile {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Small mobile phones (480px and under) */
+@media (max-width: 480px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 6px;
+    }
+    
+    .timeline-dot {
+        left: -23px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .comment-bubble {
+        max-width: 95%;
+    }
+}
+
+/* Very small mobile phones (360px) */
+@media (max-width: 360px) {
+    .sidebar {
+        width: 100%; /* Occupe tout l'écran */
+    }
+    
+    .sidebar-brand {
+        justify-content: space-between;
+    }
+    
+    .sidebar-brand .close-sidebar {
+        display: block;
+    }
+}

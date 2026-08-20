@@ -1,0 +1,470 @@
+/* assets/css/style.css */
+
+/* ========================================================
+   1. VARIABLES & SYSTEM DE DESIGN
+   ======================================================== */
+:root {
+    /* Tunisie Telecom Brand Colors */
+    --primary-color: #0066CC;
+    --primary-hover: #0052A3;
+    --primary-light: #E6F0FA;
+    --secondary-color: #003366;
+    --accent-color: #FF5A00; /* TT Orange */
+    
+    /* Neutral Colors */
+    --bg-color: #F4F7FC;
+    --card-bg: #FFFFFF;
+    --text-main: #1D2A44;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    
+    /* Semantic Status Colors */
+    --status-open: #3B82F6;       /* Blue */
+    --status-open-light: #EFF6FF;
+    --status-progress: #F59E0B;   /* Orange */
+    --status-progress-light: #FEF3C7;
+    --status-resolved: #10B981;   /* Green */
+    --status-resolved-light: #ECFDF5;
+    --status-closed: #6B7280;     /* Grey */
+    --status-closed-light: #F3F4F6;
+    
+    /* Semantic Priority Colors */
+    --priority-low: #10B981;
+    --priority-medium: #3B82F6;
+    --priority-high: #F59E0B;
+    --priority-urgent: #EF4444;
+
+    /* Styling Properties */
+    --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-md: 0 10px 20px rgba(0, 102, 204, 0.05);
+    --shadow-lg: 0 20px 40px rgba(0, 102, 204, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================================
+   2. INITIALISATION ET RESET
+   ======================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================================
+   3. TYPOGRAPHIE
+   ======================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================================
+   4. BOUTONS PREMIUM
+   ======================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(0, 102, 204, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+}
+
+.btn-secondary {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: var(--status-resolved);
+    color: #FFFFFF;
+}
+
+.btn-success:hover {
+    background-color: #0d9488;
+}
+
+.btn-danger {
+    background-color: var(--priority-urgent);
+    color: #FFFFFF;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.btn-warning {
+    background-color: var(--status-progress);
+    color: #FFFFFF;
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    background-color: #F8FAFC;
+    border-color: var(--text-muted);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================================
+   5. FORMULAIRES DESIGN
+   ======================================================== */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #F8FAFC;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* ========================================================
+   6. COMPOSANTS COMMUNS
+   ======================================================== */
+
+/* Cartes Premium */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 102, 204, 0.03);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Badges Statuts & Priorités */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Statuts */
+.badge-status-ouverte {
+    background-color: var(--status-open-light);
+    color: var(--status-open);
+}
+.badge-status-en-cours {
+    background-color: var(--status-progress-light);
+    color: var(--status-progress);
+}
+.badge-status-resolue {
+    background-color: var(--status-resolved-light);
+    color: var(--status-resolved);
+}
+.badge-status-cloturee {
+    background-color: var(--status-closed-light);
+    color: var(--status-closed);
+}
+
+/* Priorités */
+.badge-priority-faible {
+    background-color: #ECFDF5;
+    color: var(--priority-low);
+}
+.badge-priority-moyenne {
+    background-color: #EFF6FF;
+    color: var(--priority-medium);
+}
+.badge-priority-haute {
+    background-color: #FEF3C7;
+    color: var(--priority-high);
+}
+.badge-priority-urgente {
+    background-color: #FEF2F2;
+    color: var(--priority-urgent);
+}
+
+/* Tableaux Modernes */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    background-color: var(--card-bg);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    background-color: #F8FAFC;
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.table tbody tr:hover td {
+    background-color: #F8FBFD;
+}
+
+/* ========================================================
+   7. DIALOGUES / MODALES ET LOADER
+   ======================================================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 51, 102, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
+    transition: var(--transition);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* Loader Global */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.loader-container.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--primary-light);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================================
+   8. SYSTEM DE TOAST NOTIFICATION
+   ======================================================== */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #1E293B;
+    color: #FFFFFF;
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    min-width: 280px;
+    max-width: 380px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: toast-in 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+
+.toast-success {
+    border-left: 4px solid var(--status-resolved);
+}
+
+.toast-error {
+    border-left: 4px solid var(--priority-urgent);
+}
+
+.toast-warning {
+    border-left: 4px solid var(--status-progress);
+}
+
+.toast-info {
+    border-left: 4px solid var(--status-open);
+}
+
+@keyframes toast-in {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.toast.toast-out {
+    animation: toast-out 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toast-out {
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
